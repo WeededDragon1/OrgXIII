@@ -27,30 +27,33 @@
       }
       
       function capitalizeFirstLetter(name){
-        
+        return name.charAt(0).toUpperCase() + name.slice(1);
       }
       
       function generateName(){
         var name = getName();
         var randomizedName = randomizeName(name, "");
         var randomizedWithX = addX(randomizedName);
+
+        var orgXIIIname = capitalizeFirstLetter(randomizedWithX);
         
-        document.getElementById("generatedName").innerHTML = randomizedWithX; 
+        document.getElementById("generatedName").innerHTML = orgXIIIname; 
       }
     </script>
     <style>
       #body{
         background-color: #24292e;
       }
+      .text{
+        color: white;
+      }
     </style>
   </head>
   <body id="body">
-    <h1>Organization XIII Name Generator</h1>
-    Your name:
-    <input type="text" id="name" name="name" />
-    <br />
+    <h1 class="text">Organization XIII Name Generator</h1>
+    <p class="text">Your name: <input type="text" id="name" name="name" /></p>
     <button onclick="generateName()">Generate</button>
     <br />
-    <h2 id="generatedName"></h2>
+    <h2 id="generatedName" class="text"></h2>
   </body>
 </html>
