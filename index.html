@@ -13,14 +13,25 @@
         else{
           var charPos = Math.floor(Math.random() * charCount);
           var randomizedName = randomizedName + name[charPos];
-          var name = name.substr(0, charPos) + name.substr(charPos+1 , name.length);
+          var name = name.substr(0, charPos) + name.substr(charPos+1, name.length);
           
           return (randomizeName(name, randomizedName));
         }
       }
       
-      function addX(){
-       document.getElementById("generatedName").innerHTML = randomizeName(getName(), ""); 
+      function addX(name){
+        var charCount = name.length;
+        var charPos = Math.floor(Math.random() * charCount);
+        
+        return name.substr(0, charPos) + "x" + name.substr(charPos, name.length);
+      }
+      
+      function generateName(){
+        var name = getName();
+        var randomizedName = randomizeName(name, "");
+        var randomizedWithX = addX(randomizedName);
+        
+        document.getElementById("generatedName").innerHTML = randomizedWithX; 
       }
     </script>
     <style>
@@ -36,6 +47,6 @@
     <br />
     <button onclick="addX()">Generate</button>
     <br />
-    <h2 id="generatedName"></h2>
+    <h2 id="generateName()"></h2>
   </body>
 </html>
