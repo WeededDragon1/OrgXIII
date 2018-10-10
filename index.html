@@ -7,6 +7,8 @@
       function randomizeName(name, randomizedName){
         var charCount = name.length;
         
+        alert(name);
+        
         if(charCount == 0){
          return randomizedName; 
         }
@@ -15,7 +17,7 @@
           
           var randomizedName = randomizedName + name[charPos];
           var name = name.slice(charPos, 1);
-          randomizeName(name, randomizedName);
+          return (randomizeName(name, randomizedName));
         }
       }
       
