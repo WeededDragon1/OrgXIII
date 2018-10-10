@@ -1,5 +1,28 @@
 <html>
   <head>
+    <script>
+      function getName(){
+       return document.getElementById("name").value; 
+      }
+      function randomizeName(name, randomizedName){
+        var charCount = word.length;
+        
+        if(charCount == 0){
+         return randomizedName; 
+        }
+        else{
+          var charPos = Math.floor(Math.random() * charCount)
+          
+          var randomizedName += word[charPos];
+          var name = name.splice(charPos, 1);
+          randomizeName(name, randomizedName);
+        }
+      }
+      
+      function addX(){
+       document.getElementById("").innerHTML = randomizeName(getName, ""); 
+      }
+    </script>
     <style>
       #body{
         background-color: #24292e;
@@ -8,5 +31,11 @@
   </head>
   <body id="body">
     <h1>Organization XIII Name Generator</h1>
+    Your name:
+    <input type="text" id="name" name="name" />
+    <br />
+    <button onclick="addX()">Generate</button>
+    <br />
+    <h2 id="generatedName"></h2>
   </body>
 </html>
