@@ -7,15 +7,18 @@
       function randomizeName(name, randomizedName){
         var charCount = name.length;
         
-        alert(name);
-        
         if(charCount == 0){
          return randomizedName; 
         }
         else{
           var charPos = Math.floor(Math.random() * charCount);
           
+          alert("Character Position: " + charPos + "Character: " + name[charPos]);
+          
           var randomizedName = randomizedName + name[charPos];
+          
+          alert("Part 1: " + name.substr(0, charPos) + "Part 2: " + name.substr(charPos + name.length));
+          
           var name = name.substr(0, charPos) + name.substr(charPos + name.length);
           return (randomizeName(name, randomizedName));
         }
