@@ -26,6 +26,10 @@
         return name.substr(0, charPos) + "x" + name.substr(charPos, name.length);
       }
       
+      function capitalizeFirstLetter(name){
+        
+      }
+      
       function generateName(){
         var name = getName();
         var randomizedName = randomizeName(name, "");
@@ -45,8 +49,8 @@
     Your name:
     <input type="text" id="name" name="name" />
     <br />
-    <button onclick="addX()">Generate</button>
+    <button onclick="generateName()">Generate</button>
     <br />
-    <h2 id="generateName()"></h2>
+    <h2 id="name"></h2>
   </body>
 </html>
