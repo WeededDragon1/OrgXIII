@@ -17,9 +17,9 @@
           
           var randomizedName = randomizedName + name[charPos];
           
-          alert("Part 1: " + name.substr(0, charPos) + "Part 2: " + name.substr(charPos + name.length));
+          alert("Part 1: " + name.substr(0, charPos) + "Part 2: " + name.substr(charPos+1 , name.length));
           
-          var name = name.substr(0, charPos) + name.substr(charPos + name.length);
+          var name = name.substr(0, charPos) + name.substr(charPos+1 , name.length);
           return (randomizeName(name, randomizedName));
         }
       }
