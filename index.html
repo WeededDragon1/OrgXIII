@@ -2,7 +2,7 @@
   <head>
     <script>
       function getName(){
-       return document.getElementById("name").value; 
+       return document.getElementById("name").value.toLowerCase(); 
       }
       function randomizeName(name, randomizedName){
         var charCount = name.length;
@@ -12,14 +12,9 @@
         }
         else{
           var charPos = Math.floor(Math.random() * charCount);
-          
-          alert("Character Position: " + charPos + "Character: " + name[charPos]);
-          
           var randomizedName = randomizedName + name[charPos];
-          
-          alert("Part 1: " + name.substr(0, charPos) + "Part 2: " + name.substr(charPos+1 , name.length));
-          
           var name = name.substr(0, charPos) + name.substr(charPos+1 , name.length);
+          
           return (randomizeName(name, randomizedName));
         }
       }
